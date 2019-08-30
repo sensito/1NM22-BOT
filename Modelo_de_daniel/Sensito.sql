@@ -1,11 +1,29 @@
-CREATE DATABASE IF NOT EXISTS library;
-use library;
+CREATE DATABASE IF NOT EXISTS library; #Crea la libreria si es que no exite
+use library; #uso de la lobreria
+
+
+#UNSIGNED Quita el bit del signo y lo da para un valor mas
+#NOT NULL el valor no puede ser nulo
+#AUTO_INCREMENT incrementa automaticamente de uno en uno el valor de la tabla
+#INTEGER Es casi lo mismo que poner solo INT
+#ENUM la base de datos solo permitira el ingreso especifico de los balores que lo soigen entre parentesis
+#COMMENT La DB permirira que coloques comentarios a las tablas que solo podra ber el admin de esta misma
+#UNIQUE la DB validara que dentro de ese campo solo exista uno y solo un valor, para que todos sean diferentes
+#DEFAULT LA DB si resive un valor vacio, le pondra automaticamente el valor puesto por default
+#DATETIME permitira el ingreso de valores "DD-MM-A~NO,A~NO"
+#TIMESTAMP permite el ingreso de valores como "DD-MM-A~NO,A~NO  HH:MM:SS"
+#TEXT es una tipo de dato sin ta~no es de tama~no dependiendo de los caracteres que le ingreses
+#La nuevas mejores practicas dicatan que es mejor poner todas las funciones del lenguaje en mayusculas y los nombre de tablas etc en minuscilas
+#Todos los nombres de tablas etc en ingles
+#todos los nombres de las columnas en prural
+#las bareiables ID en singular segido por,  _id
+#VARCHAR la manera mas rapida y comoda de identificar un string
 
 
 CREATE TABLE IF NOT EXISTS editorials(
   editorial_id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-  `name` VARCHAR(100) NOT NULL
-)CHARSET=utf8mb4;
+  `name` VARCHAR(100) NOT NULL  #Primer parte diferente, las '' o los ''  se utilisan para espeficar que es el nombre de un atributo y no una funcion del lengiaje
+)CHARSET=utf8mb4; #Se utilisa para que dentro de la base de datos se puedan introdusir asentos o ~n e inclusive emogis xD
 
 CREATE TABLE IF NOT EXISTS genres(
   genre_id INTEGER UNSIGNED PRIMARY KEY  NOT NULL AUTO_INCREMENT,
