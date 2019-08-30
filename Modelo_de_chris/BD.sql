@@ -1,13 +1,21 @@
 drop database if exists dbBiblioteca;
 create database dbBiblioteca;
 use dbBiblioteca;
-
+set SQL_SAFE_UPDATES = 0;
 create table tblClase(
 
 	idClase int(11) primary key not null,
     Clase nvarchar(60) not null
 
 );
+
+insert into tblClase values(1, 'Poema');
+insert into tblClase values(2, 'Cuento');
+
+select idClase from tblClase where Clase = 'qweqwe';
+
+delete from tblClase where Clase = 'Noticia';
+update tblClase set Clase = 'Noticia' where Clase = 'Poema';
 
 create table tblEditorial(
 
