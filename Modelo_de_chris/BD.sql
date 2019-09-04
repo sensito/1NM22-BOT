@@ -12,11 +12,6 @@ create table tblClase(
 insert into tblClase values(1, 'Poema');
 insert into tblClase values(2, 'Cuento');
 
-select idClase from tblClase where Clase = 'qweqwe';
-
-delete from tblClase where Clase = 'Noticia';
-update tblClase set Clase = 'Noticia' where Clase = 'Poema';
-
 create table tblEditorial(
 
 	idEditorial int(11) primary key not null,
@@ -24,20 +19,23 @@ create table tblEditorial(
 
 );
 
+insert into tblEditorial values(1, 'AlfaOmega');
+
+
 create table tblLibro(
 
 	idLibro int(11) primary key not null,
     Titulo nvarchar(60) not null,
     NoHojas int(11) not null,
     Edicion int(11) not null,
-    AnoPublicacion int(11) not null,
+    AnoPublicacion year not null,
     idEditorial int(11) not null,
     idClase int(11) not null,
     foreign key (idEditorial) references tblEditorial(idEditorial),
     foreign key (idClase) references tblClase(idClase)
 
 );
-
+insert into tblLibro values(1,'El Libro Vaquero',99,3,'1999',1,1);
 create table tblAutor(
 
 	idAutor int(11) primary key not null,
