@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS library; #Crea la libreria si es que no exite
-use library; #uso de la lobreria
+use library; #uso de la libreria
 
 
 #UNSIGNED Quita el bit del signo y lo da para un valor mas
@@ -12,16 +12,16 @@ use library; #uso de la lobreria
 #DEFAULT LA DB si resive un valor vacio, le pondra automaticamente el valor puesto por default
 #DATETIME permitira el ingreso de valores "DD-MM-A~NO,A~NO"
 #TIMESTAMP permite el ingreso de valores como "DD-MM-A~NO,A~NO  HH:MM:SS"
+#VARCHAR la manera mas rapida y comoda de identificar un string
 #TEXT es una tipo de dato sin ta~no es de tama~no dependiendo de los caracteres que le ingreses
 #La nuevas mejores practicas dicatan que es mejor poner todas las funciones del lenguaje en mayusculas y los nombre de tablas etc en minuscilas
 #Todos los nombres de tablas etc en ingles
 #todos los nombres de las columnas en prural
-#las bareiables ID en singular segido por,  _id
-#VARCHAR la manera mas rapida y comoda de identificar un string
+#las bareiables ID en singular el nombre de la tabla segido por,  _id
 
 
 CREATE TABLE IF NOT EXISTS editorials(
-  editorial_id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  editorial_id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(100) NOT NULL  #Primer parte diferente, las '' o los ''  se utilisan para espeficar que es el nombre de un atributo y no una funcion del lengiaje
 )CHARSET=utf8mb4; #Se utilisa para que dentro de la base de datos se puedan introdusir asentos o ~n e inclusive emogis xD
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS books (
   editorial_id INTEGER UNSIGNED NOT NULL,
 	`title` VARCHAR(100) NOT NULL,
 	`year` INTEGER NOT NULL DEFAULT '1900',
-	`lenguage` VARCHAR(2) NOT NULL DEFAULT 'es' COMMENT 'ISO 639-1 Languje',
+	`lenguage` VARCHAR(2) NOT NULL DEFAULT 'es' COMMENT 'ISO 639-1 Languje', #esta norma ISO solo es para guardar lenguajes a 2 dijitos
   `copies` INTEGER NOT NULL DEFAULT '1',
   `genre_id` INTEGER UNSIGNED NOT NULL,
 	`description` TEXT,
