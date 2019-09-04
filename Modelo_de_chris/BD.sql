@@ -44,6 +44,7 @@ create table tblAutor(
     ApellidoMA nvarchar(60) not null
 
 );
+insert into tblAutor values(1,'Pedro', 'Juarez', 'Galvan');
 
 create table tblrelAutorLibro(
 
@@ -54,6 +55,8 @@ create table tblrelAutorLibro(
     foreign key (idLibro) references tblLibro(idLibro)
 
 );
+
+insert into tblrelAutorLibro values (1,1,1);
 
 create table tblTipoPersona(
 
