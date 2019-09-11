@@ -1,4 +1,4 @@
-#Medico
+# Medico
 Modelo creado simulando el servicio medico perteneciente a la, Unidad Profesional Interdisciplinaria de Ingeniería y Ciencias Sociales y Administrativas, perteneciente al, Instituto Politécnico Nacional.
 
 Equipo conformado por:
