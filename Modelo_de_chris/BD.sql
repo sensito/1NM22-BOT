@@ -52,7 +52,7 @@ create table tblrelAutorLibro(
     idAutor int(11) not null,
     idLibro int(11) not null,
     foreign key (idAutor) references tblAutor(idAutor),
-    foreign key (idLibro) references tblLibro(idLibro)
+    foreign key (idLibro) references tbOlLibro(idLibro)
 
 );
 
