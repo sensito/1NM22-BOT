@@ -48,11 +48,16 @@ insert into tblAutor values(1,'Pedro', 'Juarez', 'Galvan');
 
 create table tblrelAutorLibro(
 
-	idrelAutorLibro int(11) primary key not null,
+	idrelAutorLibro int
+    
+    
+    
+    
+    (11) primary key not null,
     idAutor int(11) not null,
     idLibro int(11) not null,
     foreign key (idAutor) references tblAutor(idAutor),
-    foreign key (idLibro) references tbOlLibro(idLibro)
+    foreign key (idLibro) references tblLibro(idLibro)
 
 );
 
@@ -65,6 +70,8 @@ create table tblTipoPersona(
 
 );
 
+insert into tbltipopersona values(1,'Alumno');
+
 create table tblPersona(
 
 	idPersona int(11) primary key not null,
@@ -72,9 +79,13 @@ create table tblPersona(
     ApellidoP nvarchar(60) not null,
     ApellidoM nvarchar(60) not null,
     idTipoPersona int(11) not null,
+    Usuario nvarchar(60) not null,
+    Contrasena nvarchar(60) not null,
     foreign key (idTipoPersona) references tblTipoPersona(idTipoPersona)
 
 );
+
+insert into tblpersona values(1,'Viri','Rodriguez','Vega',1,'admin','admin');
 
 create table tblTipoContacto(
 
